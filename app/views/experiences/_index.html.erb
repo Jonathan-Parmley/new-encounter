@@ -3,7 +3,11 @@
 <% @experiences.each do |experience| %>
   <div class="card">
     <div class="card-body">
+      <h6 class="text-muted">ONLINE EXPERIENCE</h6>
       <h2><%= experience.title %></h2>
+      <p><%= experience.description.first(50) %>...</p>
+      <p><i class="fas fa-euro-sign"></i> <%= experience.price %> / person</p>
+      <p><%= experience.duration %> hours</p>
     </div>
   </div>
 <% end %>
