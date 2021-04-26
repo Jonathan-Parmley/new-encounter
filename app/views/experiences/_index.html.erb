@@ -1,0 +1,10 @@
+<h3><%= @experiences.count %> experiences</h3>
+
+<% @experiences.each do |experience| %>
+  <div class="card">
+    <div class="card-body">
+      <h2><%= experience.title %></h2>
+    </div>
+  </div>
+<% end %>
+
