@@ -10,10 +10,12 @@ class ExperiencesController < ApplicationController
 
     def new
         @experience = Experience.new
+        authorize @experience
     end
 
     def create
         @experience = Experience.new(experience_params)
+        authorize @experience
         if @experience.save
             redirect_to experience_path(@experience_path), notice: 'Experience was successfully created'
         else
@@ -38,6 +40,7 @@ class ExperiencesController < ApplicationController
 
     def set_experience
         @experience = Experience.find(params[:id])
+        authorize @experience
     end
 
     def experience_params
