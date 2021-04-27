@@ -132,7 +132,7 @@ e5 = [
       free worldwide FedEx shipping. Your will get the rug at your home within
       7-10 working days.
       Check amazing reviews in Tripadvisor Under name of our Co-Oprative
-      "Pukhraj Durry Udhyog" from previous guests who already visited us in
+      'Pukhraj Durry Udhyog' from previous guests who already visited us in
       person and bought from us.
       Use it also as a gift, we will take care of everything.
 

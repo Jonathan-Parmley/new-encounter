@@ -17,7 +17,7 @@ class ExperiencesController < ApplicationController
         @experience = Experience.new(experience_params)
         authorize @experience
         if @experience.save
-            redirect_to experience_path(@experience_path), notice: 'Experience was successfully created'
+            redirect_to experience_path(@experience), notice: 'Experience was successfully created'
         else
             render :new
         end
