@@ -1,14 +1,16 @@
-<h3><%= @experiences.count %> experiences</h3>
-
 <% @experiences.each do |experience| %>
-  <div class="card">
-    <div class="card-body">
-      <h6 class="text-muted">ONLINE EXPERIENCE</h6>
-      <h2><%= experience.title %></h2>
-      <p><%= experience.description.first(50) %>...</p>
-      <p><i class="fas fa-euro-sign"></i> <%= experience.price %> / person</p>
-      <p><%= experience.duration %> hours</p>
+
+  <div class="card-experience m-2">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-experience-infos">
+      <div>
+        <h2><%= experience.title %></h2>
+        <h6 class="text-muted">ONLINE EXPERIENCE</h6>
+        <p><%= experience.description.first(50) %>...</p>
+      </div>
+      <h2 class="card-experience-pricing">From € <%= experience.price %> / person</h2>
     </div>
   </div>
+
 <% end %>
 
