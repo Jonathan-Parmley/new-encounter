@@ -10,6 +10,7 @@
             <%= f.input :location, placeholder: 'Japan, Osaka' %>
             <%= f.input :duration, as: :select, collection: (1..10), required: true, prompt: "How long? in hour" %>
             <%= f.input :price, placeholder: '30 Euro' %>
+            <%= f.input :photo, as: :file %>
           </div>
           <div class="mt-3">
             <%= f.submit class: 'btn btn-primary' %>
