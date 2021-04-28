@@ -1,2 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/sjUufQqEnHI);">
+  <div class="container">
+    <div class="tagline d-flex mt-3">
+      <div>
+        <h2>Online</h2>
+        <h2>Experiences</h2>
+        <p>Find unique activities led by one-of-a-kind hosts — all without leaving your home.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div>
+    <h3><%= @experiences.count %> experiences</h3>
+  </div>
+  <div class="border-top d-flex">
+    <%= render 'experiences/index', experiences: @experiences %>
+  </div>
+</div>
