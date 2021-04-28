@@ -56,7 +56,7 @@ class ExperiencesController < ApplicationController
     end
 
     private
-
+    
     def set_experience
         @experience = Experience.find(params[:id])
         authorize @experience
