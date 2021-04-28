@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
     before_action :set_booking, only: :destroy
-    before_action :set_user, only: [:new, :create]
     before_action :set_experience, only: [:new, :create]
 
     def new
@@ -10,7 +9,17 @@ class BookingsController < ApplicationController
     def create
         @booking = Booking.new(booking_params)
         @booking.experience = @experience
-        
+        @experience.user = current_user
+        if @booking.save
+            redirect_to experience_path(@experience), notice: 'Booking was successfully created'
+        else
+            render :new
+        end
+    end
+
+    def destroy
+        @booking.destroy
+        redirect_to experience_path(@booking.experience)
     end
 
 
