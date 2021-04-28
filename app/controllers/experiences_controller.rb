@@ -3,6 +3,7 @@ class ExperiencesController < ApplicationController
 
     def index
         @experiences = Experience.all
+        authorize @experiences
     end
 
     def show
@@ -15,12 +16,21 @@ class ExperiencesController < ApplicationController
 
     def create
         @experience = Experience.new(experience_params)
+        @experience.user = current_user # added new to create
         authorize @experience
         if @experience.save
             redirect_to experience_path(@experience), notice: 'Experience was successfully created'
         else
             render :new
         end
+        # respond_to do |format|
+        #   if @experience.save
+        #     format.html { redirect_to @experience, notice: 'Exprience was successfully created.' }
+        #     format.json { render :show, status: :create, location: @experience }
+        #   else
+        #     format.html { render :new }
+        #     format.json { render json: @experience.errors, status: :unprocessable_entity }
+        #   end
     end
 
     def edit
@@ -29,6 +39,15 @@ class ExperiencesController < ApplicationController
     def updated
         @experience.update(experience_params)
         redirect_to experience_path(@experience_path), notice: 'Experience was successfully updated'
+    #   render_to do |format|
+    #     if @experience.update(experience_params)
+    #       format.html { render_to @experience, notice: 'Experience was successfully updated' }
+    #       format.json { render :show, status: :ok, location: @experience }
+    #     else
+    #       format.html { render :edit }
+    #       format.json { render json: @experience.errors, status: :unprocessable_entity }
+    #     end
+      end
     end
 
     def destroy

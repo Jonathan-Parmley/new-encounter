@@ -1,8 +1,6 @@
 class ExperiencePolicy < ApplicationPolicy
-  class Scope < Scope
-    def resolve
-      scope.all
-    end
+  def index?
+    true
   end
 
   def show?
@@ -10,15 +8,20 @@ class ExperiencePolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    user.present?
   end
 
   def update?
-    record.user == user
+    return  true if user.present? && user == experience.user
   end
 
   def destroy?
-    record.user == user
+    return  true if user.present? && user == experience.user
   end
 
+  private
+
+  def experience
+    record
+  end
 end
