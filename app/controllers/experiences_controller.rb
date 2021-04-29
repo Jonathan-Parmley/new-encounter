@@ -1,6 +1,6 @@
 class ExperiencesController < ApplicationController
     before_action :set_experience, only: [:show, :edit, :update, :destroy]
-
+    
     def index
         @experiences = Experience.all
         authorize @experiences
@@ -36,9 +36,9 @@ class ExperiencesController < ApplicationController
     def edit
     end
 
-    def updated
+    def update
         @experience.update(experience_params)
-        redirect_to experience_path(@experience_path), notice: 'Experience was successfully updated'
+        redirect_to experience_path(@experience), notice: 'Experience was successfully updated'
     #   render_to do |format|
     #     if @experience.update(experience_params)
     #       format.html { render_to @experience, notice: 'Experience was successfully updated' }
@@ -47,12 +47,11 @@ class ExperiencesController < ApplicationController
     #       format.html { render :edit }
     #       format.json { render json: @experience.errors, status: :unprocessable_entity }
     #     end
-      end
     end
 
     def destroy
         @experience.destroy
-        redirect_to experiences_path
+        redirect_to root_path
     end
 
     private

@@ -19,7 +19,8 @@ class ExperiencePolicy < ApplicationPolicy
   end
 
   def create?
-    user.present?
+    return true
+    # user.present?
   end
 
   def update?
