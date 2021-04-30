@@ -39,3 +39,17 @@
   top: -20px;
   width: 40px;
 }
+
+.card-banner-image {
+  height: 190px;
+  width: 150px;
+  border-radius: 25px;
+  margin: 4px;
+}
+
+.card-banner-image img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+}

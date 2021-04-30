@@ -1,20 +1,40 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/sjUufQqEnHI);">
+<div class="banner">
   <div class="container">
-    <div class="tagline d-flex mt-3">
-      <div>
-        <h2>Online</h2>
-        <h2>Experiences</h2>
-        <p>Find unique activities led by one-of-a-kind hosts — all without leaving your home.</p>
+    <div class="row">
+      <div class="col">
+        <div class="tagline d-flex mt-5">
+          <div class="align-self-center">
+            <h2>Online</h2>
+            <h2>Experiences</h2>
+            <p>Find unique activities led by one-of-a-kind hosts — all without leaving your home.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row no-gutters">
+          <div class="col-4 d-flex">
+            <div class="card-banner-image align-self-center">
+              <img src="https://source.unsplash.com/s1oZK5tZfC8" alt="">
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-banner-image">
+              <img src="https://source.unsplash.com/vA1L1jRTM70" alt="">
+            </div>
+            <div class="card-banner-image mt-4">
+              <img src="https://source.unsplash.com/GxH1DSxzons" alt="">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<div class="container">
   <div>
     <h3><%= @experiences.count %> experiences</h3>
   </div>
-  <div class="border-top d-flex">
-    <%= render 'experiences/index', experiences: @experiences %>
-  </div>
+  <%= render 'experiences/index', experiences: @experiences %>
 </div>
+
+
+
+
