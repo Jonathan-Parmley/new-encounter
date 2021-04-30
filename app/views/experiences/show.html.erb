@@ -1,6 +1,7 @@
 <%= link_to "All experiences", root_path %>
 <h1><%= @experience.title %></h1>
 <%= link_to "Book now!", new_experience_booking_path(@experience) %>
+<%= link_to "Edit now!", edit_experience_path(@experience) %>
 
 <div class="row my-2">
       <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
