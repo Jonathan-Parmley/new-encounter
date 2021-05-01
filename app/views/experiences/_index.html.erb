@@ -2,7 +2,13 @@
   <% @experiences.each do |experience| %>
     <%= link_to experience_path(experience), class:'text-decoration-none' do %>
       <div class="card-experience m-2">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" /> -->
+        <%#= cl_image_tag experience.photos.first, height: 300, width: 600, crop: :fill %>
+        <% if experience.photos.attached? %>
+          <% experience.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, height: 300, width: 600, crop: :fill %>
+          <% end %>
+      <% end %>
         <div class="card-experience-infos d-flex flex-column">
           <div>
             <h6 class="text-muted">ONLINE EXPERIENCE</h6>
