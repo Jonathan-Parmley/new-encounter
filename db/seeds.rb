@@ -242,18 +242,20 @@ e8 = [
 
 experiences = []
 
-experiences << e1 << e2 << e3 << e4
+experiences << e1 << e2 << e3 << e4 << e5 << e6 << e7  << e8
 
 experiences.each do |e|
-  e = Experience.new(
+  file = URI.open(e[2])
+  exp = Experience.new(
         title: e[0],
         description: e[1],
         location: locations.sample,
         duration: (rand(1..8)),
         price: (rand(32..121)),
         user_id: firstUser.id
-  e.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     )
+  exp.photos.attach(io: file, filename: "#{(rand(1001..1999))}.png", content_type: 'image/png')
+  exp.save
   puts "Creating experience: #{e[0]} "
 end
 
