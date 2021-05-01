@@ -1,3 +1,5 @@
+require "open-uri"
+
 puts "Cleaning database..."
 Experience.destroy_all
 User.destroy_all
@@ -25,7 +27,9 @@ e0 = [
 
       "Yoga is an ancient healing wellness,assisted yoga postures, breathing and
       meditation to bring the body into a state of deep relaxation. Let's get
-      start wit me!"
+      start wit me!",
+
+      "https://source.unsplash.com/t1NEMSm1rgI"
       ]
 
 e1 = [
@@ -44,13 +48,20 @@ e1 = [
       During my sessions one of my priorities is to make you feel comfortable,
       teach you how to pose and have fun together.
       In case of bad weather we can reschedule.
-      Each person will have at least 12 professionally edited images."
+      Each person will have at least 12 professionally edited images.",
+
+      "https://source.unsplash.com/UVUwwm5DQl8"
     ]
 
 e2 = [
-        "Discover the city",
+        "Discover the city virtually",
 
-        "Let's discover histrical old city with me!",
+        "My treasure hunt is a unique way of discovering the city. I will meet you at the start location. Here I will explain the game and tell you the story.
+        I have developed a treasure hunt around the story of the Marines. Rotterdam was bombed in world war II and if you know where to look, you can still see the history in the streets. The objective of the treasure hunt is to find a secret location and along the way you will see some highlights of Rotterdam but also some places that only a local like me would know. All the locations and puzzles are linked to the story of the Marines. It is an exciting route with lots of beautiful places and challenging puzzles.
+        At each location in the game, I will be present to tell you more about the city and the story and to hand over the next envelope. In these envelopes you can find the challenges, if you are smart enough to complete them all, you will be able to find the secret location! Not to worry, if you need help with the challenges, I will be there to give you some hints.",
+
+        "https://source.unsplash.com/e9eYnKJJqng"
+
      ]
 
 e3 = [
@@ -69,7 +80,9 @@ e3 = [
 
       Of course you can take souvenir photos from the walk.
       Please do not bring your own dog without prior arrangement.
-      I'm happy to answer all your questions about the dogs and my activities."
+      I'm happy to answer all your questions about the dogs and my activities.",
+
+      "https://source.unsplash.com/sjYKio1FfZw"
     ]
 
 e4 = [
@@ -104,7 +117,9 @@ e4 = [
       This Experience is not only for someone alone at home, but also great
       for team-building to reconnect with your colleagues while working from
         home, for birthday parties, bachelorettes, and even to connect with
-        your family and friends, even if in different homes or countries!"
+        your family and friends, even if in different homes or countries!",
+
+        "https://source.unsplash.com/2QvfyIkmMWE"
       ]
 
 e5 = [
@@ -137,7 +152,9 @@ e5 = [
       Use it also as a gift, we will take care of everything.
 
       Book a private experience for your team. We have already hosted big
-      groups of 50+ for Facebook, and they loved it and repeate"
+      groups of 50+ for Facebook, and they loved it and repeate",
+
+      "https://source.unsplash.com/JLY4Q9XYowA"
       ]
 
 e6 = [
@@ -171,7 +188,56 @@ e6 = [
 
       Book a private experience for your team. We have already hosted big
       groups of 50+ for Facebook, Pinterest, Twitter, StitchFix, among others,
-      and they loved it and repeated!"
+      and they loved it and repeated!",
+
+      "https://source.unsplash.com/s2q1_cxLHSE"
+      ]
+
+e7 = [
+      "Traditional Babka & Kolaches from Grandma's Recipe",
+
+      "Let's have fun & travel to Slovakia!
+      (at least with our taste buds and the best traditional pastry :)
+
+      During this online baking class, I'll teach you step-by-step how to make
+      the most delicious traditional buns in Slovak called Koláče and a sweet
+      braided bread called Babka from scratch
+
+      I want this class to be as interactive as possible with YOU being able to
+      bake, learn, and make the most of it. It is a relaxed, fun but educational
+      class packed with plenty of tips on how to work properly with yeast-based
+        doughs
+
+      WHAT WE'LL DO:
+      --> We'll start by explaining a bit about the ingredients with a focus on
+      yeasts as there are certain rules to be followed anytime you're using them
+      in baking
+      --> We'll move on with preparing the dough, give it some time to rest and
+      in the meantime, we'll work on fillings
+      --> Lastly, we'll proceed with filling, shaping, baking, and of course,
+      tasting :)
+
+      PLUS: After the class, I'll send you three more traditional recipes that
+      you can make with the very same dough. Yum :)
+
+      This experience is GREAT FOR GROUPS and TEAM-BUILDINGS as well. Reconnect
+      with your team, have fun and enjoy delicious pastries afterward​ - by today
+      I had a chance to teach teams from companies like Grammarly, Google,
+      Airbnb & many more",
+
+      "https://source.unsplash.com/7Q7xoaw7MhQ"
+      ]
+
+e8 = [
+      "Vinyl Master Virtual Tour",
+
+      "Spend a day with your finger on the rhythmic pulse of Cuban music. We’ll meet at a home studio where you’ll take a front row seat to the modern music scene.
+
+      Press play: To begin, learn about the complex history of music in Cuba through personal stories and music documentaries. You’ll even get a peek at some documentaries currently in production.
+
+      Skip to the next song: Head to a fascinating record store set inside the home of a local music aficionado. Rummage through stacks of vintage records and purchase a rare vinyl to dance to back home.",
+
+      "https://source.unsplash.com/3hWg9QKl5k8"
       ]
 
 experiences = []
@@ -179,13 +245,14 @@ experiences = []
 experiences << e1 << e2 << e3 << e4
 
 experiences.each do |e|
-  Experience.create!(
+  e = Experience.new(
         title: e[0],
         description: e[1],
         location: locations.sample,
         duration: (rand(1..8)),
         price: (rand(32..121)),
         user_id: firstUser.id
+  e.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     )
   puts "Creating experience: #{e[0]} "
 end
