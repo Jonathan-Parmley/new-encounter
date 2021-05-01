@@ -18,7 +18,7 @@
             <strong><%= @experience.title %> <span class="text-muted font-weight-normal"><i class="fas fa-star star-yellow"></i></span></strong>
             <small class="text-muted"><%= @experience.description %></small>
               <div class="d-flex align-items-end justify-content-between pt-4">
-                <i class="fas fa-quote-left mr-2"></i><small class="flex-grow-1"><%= @experience.price %></small>
+                <small class="flex-grow-1"> € <%= @experience.price %></small>
               </div>
               <% if policy(@experience).edit? %>
                 <small class="text-right flex-shrink-0"><%= link_to 'delete', experience_path(@experience), method: :delete, data: { confirm: "Are you sure you want to remove #{@experience.title}"}, class: 'text-danger' %></small>
@@ -29,12 +29,14 @@
         <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
           <div class="card-booking d-flex flex-column">
             <div class="m-2 p-2 d-flex justify-content-between">
+              <% if policy(@experience).edit? == false %>
               <div>
                 <p>25th May</p>
               </div>
               <div>
                 <%= link_to "Book", new_experience_booking_path(@experience), class: 'btn btn-primary' %>
               </div>
+              <% end %>
             </div>
             <% if policy(@experience).edit? %>
               <div class="m-2  p-2 d-flex border-top justify-content-between">
