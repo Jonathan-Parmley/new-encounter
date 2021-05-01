@@ -29,7 +29,7 @@
         <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
           <div class="card-booking d-flex flex-column">
             <div class="m-2 p-2 d-flex justify-content-between">
-              <% if policy(@experience).edit? == false %>
+              <% if policy(@experience).edit? != true %>
               <div>
                 <p>25th May</p>
               </div>
