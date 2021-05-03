@@ -1,14 +1,17 @@
 class BookingsController < ApplicationController
     before_action :set_booking, only: [:show, :destroy]
     before_action :set_experience, only: [:new, :create]
-    
+    # after_action :verify_authorized, only: [:index]
+
     def index
-      @bookings = Booking.all
-      authorize @bookings
+        @bookings = policy_scope(current_user.bookings)
+        # raise
+        # @bookings = current_user.bookings
+    #   @bookingcurrent_user = Booking.where("user_id=#{current_user.id}")
+        authorize @bookings
     end
 
     def show
-      
     end
 
     def new
