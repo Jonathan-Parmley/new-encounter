@@ -1,21 +1,19 @@
-<div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <%= simple_form_for [@user, @experience] do |f| %>
-          <div class="form-group">
-            <%= f.input :title, placeholder: 'Title' %>
-            <%= f.text_field :description, placeholder: 'What kind of activity?:)', label: "#"%>
-            <%= f.input :location, placeholder: 'Japan, Osaka' %>
-            <%= f.input :duration, as: :select, collection: (1..10), required: true, prompt: "How long? in hour" %>
-            <%= f.input :price, placeholder: '30 Euro' %>
-            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-          </div>
-          <div class="mt-3">
-            <%= f.submit class: 'btn btn-primary' %>
-          </div>
-        <% end %>
-      </div>
-    </div>
+<%= simple_form_for [@user, @experience], html: {class: 'form'} do |f| %>
+  <div class="form-group">
+    <%= f.label :title, 'Title:' %>
+    <%= f.input :title, placeholder: 'Title', label: false %>
+    <%= f.label :title, 'Description:' %>
+    <%= f.input :description, as: :text, :input_html => { class: 'test', :cols => 5, :rows => 10 }, placeholder: 'What kind of activity?:)', label: false%>
+    <%= f.label :title, 'Where?' %>
+    <%= f.input :location, placeholder: 'Japan, Osaka', label: false %>
+    <%= f.label :title, 'How Long?' %>
+    <%= f.input :duration, as: :select, collection: (1..10), required: true, prompt: "in hour", label: false %>
+    <%= f.label :title, 'How much?' %>
+    <%= f.input :price, placeholder: '30 Euro', label: false%>
+    <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'd-none hidden', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Upload photos'  %>
+    <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
   </div>
-</div>
+  <div class="mt-3">
+    <%= f.submit class: 'btn btn-flat' %>
+  </div>
+<% end %>
