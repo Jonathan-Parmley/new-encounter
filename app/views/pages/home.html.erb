@@ -29,11 +29,15 @@
       </div>
     </div>
   </div>
-  <div>
-    <h3><%= @experiences.count %> experiences</h3>
+</div>
+<div class="container mt-4 pt-4">
+  <div class="d-flex justify-content-left mb-2">
+    <h4 class="tag-grey"><%= @experiences.count %> experiences</h4>
   </div>
   <%= render 'experiences/index', experiences: @experiences %>
 </div>
+
+
 
 
 

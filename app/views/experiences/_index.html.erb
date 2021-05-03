@@ -1,27 +1,35 @@
-<div class="border-top d-flex flex-wrap">
-  <% @experiences.each do |experience| %>
-    <%= link_to experience_path(experience), class:'text-decoration-none' do %>
-      <div class="card-experience m-2">
-        <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" /> -->
-        <%#= cl_image_tag experience.photos.first, height: 300, width: 600, crop: :fill %>
-        <% if experience.photos.attached? %>
-          <% experience.photos.each do |photo| %>
-              <%= cl_image_tag photo.key, height: 300, width: 600, crop: :fill %>
-          <% end %>
-      <% end %>
-        <div class="card-experience-infos d-flex flex-column">
-          <div>
-            <h6 class="text-muted">ONLINE EXPERIENCE</h6>
-            <h2><%= experience.title %></h2>
-            <p><%= experience.description.first(50) %>...</p>
+<div class="border-top d-flex align-content-center">
+  <div class="mt-4 d-flex flex-wrap">
+    <% @experiences.each do |experience| %>
+      <%= link_to experience_path(experience), class:"card-link" do %>
+
+        <div class="m-4">
+
+          <div class="card-experience">
+            <% if experience.photos.attached? %>
+              <%= cl_image_tag experience.photos.first.key, height: 400, width: 300, crop: :fill %>
+            <% end %>
+            <div class="top-left">
+              <span class="badge badge-light p-2">ONLINE</span>
+            </div>
           </div>
-          <div class="mt-2">
-            <h2 class="card-experience-pricing">From € <%= experience.price %> / person</h2>
+
+
+          <div class="card-experience-infos d-flex flex-column mt-2">
+            <div>
+              <p><%= experience.location %></p>
+              <h2><%= experience.title %></h2>
+            </div>
+            <div class="mt-2">
+              <h2 class="card-experience-pricing">From € <%= experience.price %> / person</h2>
+            </div>
           </div>
+
         </div>
-      </div>
+
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
 
 
