@@ -9,7 +9,7 @@
     <%= f.label :title, 'How Long?' %>
     <%= f.input :duration, as: :select, collection: (1..10), required: true, prompt: "in hour", label: false %>
     <%= f.label :title, 'How much?' %>
-    <%= f.input :price, placeholder: '30 Euro', label: false%>
+    <%= f.input :price, placeholder: '30 Euro', label: false %>
     <%= f.label :title, 'Some pictures might be nice:)'%>
     <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false  %>
   </div>

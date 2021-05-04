@@ -7,6 +7,8 @@ class ExperiencesController < ApplicationController
     end
 
     def show
+        @booking = Booking.new(experience: @experience)
+        
     end
 
     def new
