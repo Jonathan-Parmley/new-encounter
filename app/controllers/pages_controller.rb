@@ -5,8 +5,14 @@ class PagesController < ApplicationController
   # def home
   #   @experiences = policy_scope(Experience).order(created_at: :desc)
   # end
-  
   def home
-    @experiences = Experience.all
+    if params[:query].present?
+      @experiences = policy_scope(Experience).search_by_title_location_and_category(params[:query])
+      # @experiences = Experience.search_by_title_location_and_category(params[:query])
+     else
+      # @experiences = Experience.all
+      # authorize @experiences
+      @experiences = policy_scope(Experience).order(created_at: :desc)
+    end
   end
 end
