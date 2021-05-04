@@ -27,11 +27,11 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    return  true if user.present? && user == experience.user
+    return  true if user.present? && user == booking.user
   end
 
   def destroy?
-    return  true if user.present? && user == experience.user
+    return  true if user.present? && user == booking.user
   end
 
   private
