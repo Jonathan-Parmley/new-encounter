@@ -19,17 +19,34 @@ locations = [
               "Berlin, Germany",
               "Munich, Germany",
               "Osaka, Japan",
-              "Frankfurt, Germany"
+              "Frankfurt, Germany",
+              "Machu Picchu, Peru",
+              "The Grand Canyon, Arizona",
+              "Rome, Italy",
+              "Maui, Hawaii",
+              "Masai Mara, Kenya",
+              "Montreal, Canada",
+              "Rotorua, New Zealand",
+              "Istanbul, Turkey",
+              "Angkor Wat, Cambodia",
+              "London, England",
+              "Manhattan, New York",
+              "Paris, France",
+              "San Francisco, California",
+              "Hong Kong",
+              "Marrakesh, Morocco"
             ]
 
 e0 = [
-      "Yoga for Beginners",
+      "Yoga for beginners",
 
       "Yoga is an ancient healing wellness,assisted yoga postures, breathing and
       meditation to bring the body into a state of deep relaxation. Let's get
       start wit me!",
 
-      "https://source.unsplash.com/t1NEMSm1rgI"
+      "https://source.unsplash.com/t1NEMSm1rgI",
+      "https://source.unsplash.com/nqUHQkuVj3c",
+      "https://source.unsplash.com/wmZNEGkcsmw"
       ]
 
 e1 = [
@@ -50,18 +67,35 @@ e1 = [
       In case of bad weather we can reschedule.
       Each person will have at least 12 professionally edited images.",
 
-      "https://source.unsplash.com/UVUwwm5DQl8"
+      "https://source.unsplash.com/DQPP9rVLYGQ",
+      "https://source.unsplash.com/HHw9lc0ogIs",
+      "https://source.unsplash.com/hty9mHHDTro"
     ]
 
 e2 = [
         "Discover the city virtually",
 
-        "My treasure hunt is a unique way of discovering the city. I will meet you at the start location. Here I will explain the game and tell you the story.
-        I have developed a treasure hunt around the story of the Marines. Rotterdam was bombed in world war II and if you know where to look, you can still see the history in the streets. The objective of the treasure hunt is to find a secret location and along the way you will see some highlights of Rotterdam but also some places that only a local like me would know. All the locations and puzzles are linked to the story of the Marines. It is an exciting route with lots of beautiful places and challenging puzzles.
-        At each location in the game, I will be present to tell you more about the city and the story and to hand over the next envelope. In these envelopes you can find the challenges, if you are smart enough to complete them all, you will be able to find the secret location! Not to worry, if you need help with the challenges, I will be there to give you some hints.",
+        "My treasure hunt is a unique way of discovering the city. I will meet
+        you at the start location. Here I will explain the game and tell you
+        the story.
+        I have developed a treasure hunt around the story of the Marines.
+        Rotterdam was bombed in world war II and if you know where to look,
+        you can still see the history in the streets. The objective of the
+        treasure hunt is to find a secret location and along the way you will
+        see some highlights of Rotterdam but also some places that only a local
+        like me would know. All the locations and puzzles are linked to the
+        story of the Marines. It is an exciting route with lots of beautiful
+        places and challenging puzzles.
+        At each location in the game, I will be present to tell you more about
+        the city and the story and to hand over the next envelope. In these
+        envelopes you can find the challenges, if you are smart enough to
+        complete them all, you will be able to find the secret location! Not to
+        worry, if you need help with the challenges, I will be there to give you
+        some hints.",
 
-        "https://source.unsplash.com/e9eYnKJJqng"
-
+        "https://source.unsplash.com/e9eYnKJJqng",
+        "https://source.unsplash.com/pAqfQye5hlw",
+        "https://source.unsplash.com/ze4v6O5toAE"
      ]
 
 e3 = [
@@ -82,7 +116,10 @@ e3 = [
       Please do not bring your own dog without prior arrangement.
       I'm happy to answer all your questions about the dogs and my activities.",
 
-      "https://source.unsplash.com/sjYKio1FfZw"
+      "https://source.unsplash.com/sjYKio1FfZw",
+      "https://source.unsplash.com/-JsZ6o5nIhs",
+      "https://source.unsplash.com/Y6EIP03u_wY"
+
     ]
 
 e4 = [
@@ -119,7 +156,9 @@ e4 = [
         home, for birthday parties, bachelorettes, and even to connect with
         your family and friends, even if in different homes or countries!",
 
-        "https://source.unsplash.com/2QvfyIkmMWE"
+        "https://source.unsplash.com/hW-RF8G94WY",
+        "https://source.unsplash.com/2QvfyIkmMWE",
+        "https://source.unsplash.com/1ZmB4XbSVRg"
       ]
 
 e5 = [
@@ -154,7 +193,10 @@ e5 = [
       Book a private experience for your team. We have already hosted big
       groups of 50+ for Facebook, and they loved it and repeate",
 
+      "https://source.unsplash.com/2QE5yMcWrD4",
+      "https://source.unsplash.com/wYvj3lrsLNc",
       "https://source.unsplash.com/JLY4Q9XYowA"
+
       ]
 
 e6 = [
@@ -190,7 +232,9 @@ e6 = [
       groups of 50+ for Facebook, Pinterest, Twitter, StitchFix, among others,
       and they loved it and repeated!",
 
-      "https://source.unsplash.com/s2q1_cxLHSE"
+      "https://source.unsplash.com/s2q1_cxLHSE",
+      "https://source.unsplash.com/OrubLvISGZc",
+      "https://source.unsplash.com/lsaXYTh_4gQ"
       ]
 
 e7 = [
@@ -225,27 +269,82 @@ e7 = [
       I had a chance to teach teams from companies like Grammarly, Google,
       Airbnb & many more",
 
-      "https://source.unsplash.com/7Q7xoaw7MhQ"
+      "https://source.unsplash.com/7Q7xoaw7MhQ",
+      "https://source.unsplash.com/KgeRD0oK8o8",
+      "https://source.unsplash.com/J9lVh479cKs"
       ]
 
 e8 = [
       "Vinyl Master Virtual Tour",
 
-      "Spend a day with your finger on the rhythmic pulse of Cuban music. We’ll meet at a home studio where you’ll take a front row seat to the modern music scene.
+      "Spend a day with your finger on the rhythmic pulse of Cuban music. We’ll
+      meet at a home studio where you’ll take a front row seat to the modern
+      music scene.
 
-      Press play: To begin, learn about the complex history of music in Cuba through personal stories and music documentaries. You’ll even get a peek at some documentaries currently in production.
+      Press play: To begin, learn about the complex history of music in Cuba
+        through personal stories and music documentaries. You’ll even get a
+        peek at some documentaries currently in production.
 
-      Skip to the next song: Head to a fascinating record store set inside the home of a local music aficionado. Rummage through stacks of vintage records and purchase a rare vinyl to dance to back home.",
+      Skip to the next song: Head to a fascinating record store set inside
+      the home of a local music aficionado. Rummage through stacks of vintage
+      records and purchase a rare vinyl to dance to back home.",
 
+      "https://source.unsplash.com/B2fNlHHI7dI",
+      "https://source.unsplash.com/T3mKJXfdims",
       "https://source.unsplash.com/3hWg9QKl5k8"
       ]
 
+e9 = [
+      "Meditation with a Japanese Buddhist Monk",
+
+      "In this online experience, I start by sharing about my meditation
+      practice. Next, we’ll do two types of meditation together.
+
+      First is a chanting mantra for 20 minutes. This type of meditation allows
+      you
+      to go deep into your practice. Next we will do a 10-minute breathing-out
+        meditation. Afterwards, you’ll share your questions and reflections on
+        the practice.
+
+      I am also happy to offer other meditations, such as meditation with a
+      candle or
+      mirror, Qigong, Sutra copying, and counting meditation, one of the basic
+      Zen practices.
+      Other things to note
+      You need to download Zoom onto your phone or computer before the
+      experience starts.",
+
+      "https://source.unsplash.com/Yui5vfKHuzs",
+      "https://source.unsplash.com/VsI_74zRzAo",
+      "https://source.unsplash.com/Yui5vfKHuzs"
+      ]
+
+e10 = [
+      ""
+]
+
+e11
+
+e12
+
+e13
+
+e14
+
+e15
+
+e16
+
+e17
+
 experiences = []
 
-experiences << e1 << e2 << e3 << e4 << e5 << e6 << e7  << e8
+experiences << e0 << e1 << e2 << e3 << e4 << e5 << e6 << e7  << e8 << e9
 
 experiences.each do |e|
-  file = URI.open(e[2])
+  file1 = URI.open(e[2])
+  file2 = URI.open(e[3])
+  file3 = URI.open(e[4])
   exp = Experience.new(
         title: e[0],
         description: e[1],
@@ -254,7 +353,9 @@ experiences.each do |e|
         price: (rand(32..121)),
         user_id: firstUser.id
     )
-  exp.photos.attach(io: file, filename: "#{(rand(1001..1999))}.png", content_type: 'image/png')
+  exp.photos.attach(io: file1, filename: "#{(rand(1000000..1999999))}.png", content_type: 'image/png')
+  exp.photos.attach(io: file2, filename: "#{(rand(1000000..1999))}.png", content_type: 'image/png')
+  exp.photos.attach(io: file3, filename: "#{(rand(1000000..1999))}.png", content_type: 'image/png')
   exp.save
   puts "Creating experience: #{e[0]} "
 end

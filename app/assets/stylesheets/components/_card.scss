@@ -16,7 +16,6 @@
   width: 300px;
   border-radius: 30px 30px 0px 0px;
   position: relative;
-  text-align: center;
 }
 
 .card-experience-infos {
@@ -26,11 +25,10 @@
   height: 110px;
   width: 300px;
   border-radius: 0px 0px 30px 30px;
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+}
+
+.card-info {
+  height: 70px
 }
 
 .card-experience-infos h2 {
