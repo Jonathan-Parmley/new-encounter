@@ -14,5 +14,12 @@ class PagesController < ApplicationController
       # authorize @experiences
       @experiences = policy_scope(Experience).order(created_at: :desc)
     end
+
+    @markers = @experiences.geocoded.map do |experience|
+      {
+        lat: experience.latitude,
+        lng: experience.longitude
+      }
+  end
   end
 end
