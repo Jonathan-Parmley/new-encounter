@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import { initFlatpickr } from "../plugins/flatpickr";
 import { previewImageOnFileSelect } from "../components/photo_preview";
 
 // Internal imports, e.g:
@@ -32,5 +33,6 @@ import { previewImageOnFileSelect } from "../components/photo_preview";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initFlatpickr();
   previewImageOnFileSelect();
 });
