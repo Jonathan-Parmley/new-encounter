@@ -37,7 +37,11 @@
 
     <div class="col">
       <div>
-        <h2>Insert map here</h2>
+        <%# Map %>
+        <div id="map"
+        style="width: 300; height: 400px;"
+        data-marker="<%= @marker.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         <%# <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%= @experience.location&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:red%7C<%= @experience.location&key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div> %>
       </div>
     </div>
