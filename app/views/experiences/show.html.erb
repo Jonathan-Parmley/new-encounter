@@ -1,99 +1,113 @@
 <div class="container">
-  <%= link_to "All experiences", root_path %>
-  <hr>
-  <%# title %>
-  <h1><%= @experience.title %></h1>
-  <%# experience images %>
-  <% if @experience.photos.attached? %>
-      <% @experience.photos.each do |photo| %>
-        <div class="map" style="background-image: url('<%= cl_image_path photo.key %>')">
-      <% end %>
-      <% else %>
-        <div class="map" style="background-image: url('<%= cl_image_path("vhdtrwmulsvwsvrhkatw")%>')">
-  <% end %>
-</div>
-<%# page left side %>
-<div class="row">
-  <div class="col-8">
-    <%# experience title %>
-    <div class="experience-card-booking">
-      <div class="flex">
-          <div class="flex">
-            <i class="far fa-compass fa-lg"></i><span><%= @experience.location %></span>
-          </div>
-          <br>
-          <div class="flex ml-3">
-            <i class="far fa-clock fa-lg"></i><span><%= @experience.duration %>h </span>
-          </div>
-          <br>
-          <div class="flex ml-3">
-            <%= @experience.price %><i class="fas fa-euro-sign fa-lg"></i>
-          </div>
-        </div>
-    </div>
-    <div class="experience-card-booking">
-      <h4>What you'll encounter...</h4>
-      <p><%= @experience.description %></p>
-      <%# <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%= @experience.location&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:red%7C<%= @flat.address&key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div> %> 
-    </div>
 
-    <%# review part %>
-    <hr class='my-5'>
-      <h3>Reviews</h3>
-      <%# if @experience.reviews.empty? %>
-        <small><em class="text-muted">Be the first one to review this list</em></small>
-      <%# end %>
-      <%# @experience.reviews.each do |review| %>
-        <div>
-          <%# review.rating.times do %>
-            <i class="fas fa-star star-yellow"></i>
-          <%# end %>
-          <small><em class="text-muted"><%#= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
-          <p class="mb-0"><%#= review.comment %></p>
-        </div>
-        <hr>
-      <%# end %>
-      <%#= simple_form_for [@experience, @review] do |f| %>
-        <%#= f.input :comment, placeholder: 'Add your review here...' %>
-        <%#= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
-        <%#= f.submit class:'btn btn-flat' %>
-      <%# end %>
+  <%= link_to "All experiences", root_path %>
+
+  <hr>
+
+  <%# title %>
+  <div>
+    <div class="">
+      <span class="badge badge-light p-2">ONLINE</span>
+    </div>
+    <div class="mt-1">
+      <h1><%= @experience.title %></h1>
+      <i class="far fa-compass fa-lg mr-2 mb-4"></i><span><%= @experience.location %></span>
+    </div>
   </div>
 
-    <%# page right side %>
-    <%# booking part %>
-    <div class="col-4">
-      <div class="experience-card-booking">
-        <h5>Choose a date!</h5>
-          <%= simple_form_for [@user, @experience, @booking] do |f| %>
-          <div class="form-group">
-            <%= f.input :date, as: :string, placeholder: 'May 7, 2021', required: false, input_html: {class: "datepicker"}, label: false %>
-          </div>
-          <div class="flex mt-3">
-            <%= f.submit class: 'btn btn-flat' %>
-          </div>
-        <% end %>
-      </div>
-      <%# Map %>
-      <div id="map"
-      style="width: 100%; height: 600px;"
-      data-marker="<%= @marker.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-      </div>
-</div>
+  <%# experience images (left column) & map (right column) %>
+  <div class="row">
+    <div class="col">
 
-<%# just for links memo %>
-<div class='border-top'>
-<%# delete %>
-<p>as Host</p>
-<% if policy(@experience).edit? %>
-  <%= link_to 'delete', experience_path(@experience), method: :delete, data: { confirm: "Are you sure you want to remove #{@experience.title}"}, class: 'text-danger' %></small>
-<% end %>
-<%# edit %>
-<% if policy(@experience).edit? %>
-    <%= link_to "Edit", edit_experience_path(@experience) %>
-<% end %>
+      <div class="card-show d-flex">
+        <div class="show-one">
+          <%= cl_image_tag @experience.photos.first.key, height: 400, width: 300, crop: :fill %>
+        </div>
+        <div class="">
+          <div class="show-two">
+            <%= cl_image_tag @experience.photos.second.key, height: 198, width: 300, crop: :fill, gravity: :face %>
+          </div>
+          <div class="show-three">
+            <%= cl_image_tag @experience.photos.last.key, height: 198, width: 300, crop: :fill, gravity: :face %>
+          </div>
+        </div>
+      </div>
 
-</div>
+    </div>
+
+    <div class="col">
+      <div>
+        <h2>Insert map here</h2>
+        <%# <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%= @experience.location&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:red%7C<%= @experience.location&key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div> %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <%# page left side %>
+    <div class="col-8">
+      <div class="mt-4">
+        <h4>What you'll encounter...</h4>
+        <p><%= @experience.description %></p>
+      </div>
+
+      <%# review part %>
+      <hr class='my-5'>
+        <h3>Reviews</h3>
+        <%# if @experience.reviews.empty? %>
+          <small><em class="text-muted">Be the first one to review this list</em></small>
+        <%# end %>
+        <%# @experience.reviews.each do |review| %>
+          <div>
+            <%# review.rating.times do %>
+              <i class="fas fa-star star-yellow"></i>
+            <%# end %>
+            <small><em class="text-muted"><%#= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+            <p class="mb-0"><%#= review.comment %></p>
+          </div>
+          <hr>
+        <%# end %>
+        <%#= simple_form_for [@experience, @review] do |f| %>
+          <%#= f.input :comment, placeholder: 'Add your review here...' %>
+          <%#= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
+          <%#= f.submit class:'btn btn-flat' %>
+        <%# end %>
+    </div>
+
+      <%# booking %>
+      <div class="col-4">
+        <div class="card-booking mt-4">
+          <div>
+            <h5><i class="fas fa-euro-sign fa-lg mr-1"></i><%= @experience.price %> / person </h5>
+          </div>
+          <div class="mt-3">
+            <i class="far fa-clock fa-lg mr-1"></i><span><%= @experience.duration %>h </span>
+          </div>
+          <h5 class="mt-3">Choose a date!</h5>
+            <%= simple_form_for [@user, @experience, @booking] do |f| %>
+            <div class="form-group">
+              <%= f.input :date, as: :string, placeholder: 'May 7, 2021', required: false, input_html: {class: "datepicker"}, label: false %>
+            </div>
+            <p>Starts 20:00 </p>
+            <div class="flex mt-3">
+              <%= f.submit class: 'btn btn-flat' %>
+            </div>
+          <% end %>
+
+          <%# host edit / delete %>
+          <% if policy(@experience).edit? %>
+            <div class='border-top mt-4'>
+              <p class="mt-2">Host:</p>
+              <%= link_to experience_path(@experience), method: :delete, data: { confirm: "Are you sure you want to remove #{@experience.title}"}, class: 'text-danger' do %>
+                <i class="far fa-trash-alt ml-4 mr-4"></i>
+              <% end %>
+              <%= link_to edit_experience_path(@experience) do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+  </div>
 
 </div>
