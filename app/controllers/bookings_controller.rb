@@ -5,10 +5,9 @@ class BookingsController < ApplicationController
 
     def index
         @bookings = policy_scope(current_user.bookings)
-        # raise
-        # @bookings = current_user.bookings
-    #   @bookingcurrent_user = Booking.where("user_id=#{current_user.id}")
         authorize @bookings
+        @experiences = policy_scope(current_user.experiences)
+        authorize @experiences
     end
 
     def show
@@ -26,17 +25,24 @@ class BookingsController < ApplicationController
         authorize @booking
         # @experience.user = current_user
         if @booking.save!
-            redirect_to booking_path(@booking), notice: 'Booking was successfully created'
+            redirect_to bookings_path(@booking), notice: 'Booking was successfully created'
         else
             render :new
         end
     end
 
+    # def edit
+    # end
+
+    # def update
+    #     @booking.update(booking_params)
+    #     redirect_to bookings_path(@booking), notice: 'Experience was successfully updated'
+    # end
+
     def destroy
         @booking.destroy
         redirect_to experience_path(@booking.experience)
     end
-
 
     private
 

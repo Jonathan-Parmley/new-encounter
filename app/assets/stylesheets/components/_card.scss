@@ -1,36 +1,79 @@
+.card-booking {
+  padding: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 30px;
+}
+
+.card-show {
+  background: white;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  border-radius: 34px;
+  width: 612px;
+  height: 408px;
+  padding: 4px;
+}
+
+.show-one {
+  overflow: hidden;
+  border-radius: 30px 0px 0px 30px;
+  margin-right: 4px;
+}
+
+.show-two {
+  overflow: hidden;
+  border-radius: 0px 30px 0px 0px;
+  margin-bottom: 4px;
+}
+
+.show-three {
+  overflow: hidden;
+  border-radius: 0px 0px 30px 0px;
+}
+
+.card-link {
+  text-decoration: none;
+  color: gray;
+  font-weight: lighter;
+}
+
+.card-link:hover {
+  color: black;
+}
+
 .card-experience {
   overflow: hidden;
   background: white;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   height: 400px;
-  width: 280px;
+  width: 300px;
+  border-radius: 30px 30px 0px 0px;
+  position: relative;
 }
 
-.exp-image {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
+.card-experience-infos {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  height: 110px;
+  width: 300px;
+  border-radius: 0px 0px 30px 30px;
 }
 
-.card-experience h2 {
+.card-info {
+  height: 70px
+}
+
+.card-experience-infos h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-experience p {
+.card-experience-infos p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
-}
-
-
-.card-experience .card-experience-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
 }
 
 .card-experience-infos .card-experience-user {
