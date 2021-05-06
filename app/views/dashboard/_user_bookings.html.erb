@@ -1,0 +1,42 @@
+<div class="mb-4">
+  <div class="border-bottom">
+    <h4 class="text-muted">Bookings ( <%= @bookings.count %> )</h4>
+  </div>
+    <div class="d-flex flex-column justify-content-end mt-3">
+      <% @bookings.each do |booking| %>
+
+        <% if @bookings.count == 0 %>
+          <p class="text-muted">You currently have no bookings, time for a new encounter?</p>
+        <% else %>
+
+          <div class="card-dash mb-3 d-flex justify-content-between">
+            <div class="d-flex">
+              <div class="card-dash-image">
+                <%= cl_image_tag booking.experience.photos.first.key, height: 100, width: 200, crop: :fill, gravity: :face %>
+              </div >
+
+              <div class="d-flex flex-column p-3">
+                <div>
+                  <h6> <%= booking.experience.title %> </h6>
+                </div>
+                <div>
+                  <p> <%= booking.date %> </p>
+                  <p class="text-warning">Pending... <small><em class="text-muted">booked <%= distance_of_time_in_words_to_now(booking.created_at) %> ago</em></small></p>
+                </div>
+              </div>
+              <div>
+                <p><i class="fas fa-euro-sign fa-lg mr-1"></i><%= booking.experience.price %> / person </p>
+                <p>20:00 <%= booking.experience.duration %> hours</p>
+              </div>
+            </div>
+            <div class="card-dash-edit d-flex justify-content-center align-items-center">
+              <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to remove booking #{booking.experience.title}"}, class: 'text-danger' do %>
+                <h5> <i class="far fa-trash-alt ml-4 mr-4"></i> </h5>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+
+      <% end %>
+    </div>
+</div>

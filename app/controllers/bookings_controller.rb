@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     end
 
     def new
-        @booking = Booking.new 
+        @booking = Booking.new
         authorize @booking
     end
 
@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
         authorize @booking
         # @experience.user = current_user
         if @booking.save!
-            redirect_to bookings_path(@booking), notice: 'Booking was successfully created'
+            redirect_to dashboard_path, notice: 'Booking was successfully created'
         else
             render :new
         end
@@ -41,7 +41,7 @@ class BookingsController < ApplicationController
 
     def destroy
         @booking.destroy
-        redirect_to experience_path(@booking.experience)
+        redirect_to dashboard_path
     end
 
     private
@@ -54,7 +54,7 @@ class BookingsController < ApplicationController
         @booking = Booking.find(params[:id])
         authorize @booking
     end
-    
+
     def set_experience
         @experience = Experience.find(params[:experience_id])
     end
