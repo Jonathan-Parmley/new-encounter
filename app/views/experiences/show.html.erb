@@ -40,7 +40,20 @@
     <%# review part %>
     <hr class='my-5'>
       <h3>Reviews</h3>
-      <%# if @experience.reviews.empty? %>
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-xs-4>
+            <%= simple_form_for [@experience, @review] do |f| %>
+              <%= f.input :name, label: "Your name:" %>
+              <%= f.input :comment, label: "Enter comment:" %>
+              <%= f.input :rating, collection: (1..5).to_a,label: "Your rating:" %>
+              <%= f.submit "Submit review" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+    <%# if @experience.reviews.empty? %>
         <small><em class="text-muted">Be the first one to review this list</em></small>
       <%# end %>
       <%# @experience.reviews.each do |review| %>
@@ -58,9 +71,6 @@
         <%#= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
         <%#= f.submit class:'btn btn-flat' %>
       <%# end %>
-  </div>
-
-    <%# page right side %>
     <%# booking part %>
     <div class="col-4">
       <div class="experience-card-booking">
