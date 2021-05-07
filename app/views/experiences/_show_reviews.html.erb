@@ -1,0 +1,26 @@
+<hr class='my-5'>
+  <h3>Reviews</h3>
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-xs-4>
+        <%= simple_form_for [@experience, @review] do |f| %>
+          <div>
+            <% if @experience.reviews.blank? %>
+              Be the first to leave a review for <%= @experience.title %>
+            <% else %>
+              <% @experience.reviews.each do |review| %>
+                <p><%= review.name %> <%= review.rating %></p>
+                <p><%= review.comment %></p>
+              <% end %>
+            <% end %>
+          </div>        
+          <div>
+            <%= f.input :name, label: "Your name:" %>
+            <%= f.input :comment, label: "Enter comment:" %>
+            <%= f.input :rating, collection: (1..5).to_a,label: "Your rating:" %>
+            <%= f.submit "Submit review"%>
+          </div>  
+        <% end %>
+      </div>
+    </div>
+  </div>
