@@ -28,6 +28,9 @@ import { initFlatpickr } from "../plugins/flatpickr";
 import { previewImageOnFileSelect } from "../components/photo_preview";
 import { initStarRating } from  "../plugins/init_star_rating";
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
+
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -39,4 +42,5 @@ document.addEventListener('turbolinks:load', () => {
   previewImageOnFileSelect();
   initStarRating();
   initMapbox();
+  initAutocomplete();
 });

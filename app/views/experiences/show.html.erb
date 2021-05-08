@@ -67,7 +67,7 @@
     <div class="col">
       <div>
         <%# Map %>
-        <div id="map"
+        <div id="map", class="card-show-map"
         style="width: 300; height: 400px;"
         data-marker="<%= @marker.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
