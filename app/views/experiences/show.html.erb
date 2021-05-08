@@ -36,34 +36,15 @@
     </div>
 
     <%# review part %>
-    <hr class='my-5'>
-      <h3>Reviews</h3>
-      <div class="container py-5">
-        <div class="row">
-          <div class="col-xs-4>
-            <%= simple_form_for [@experience, @review] do |f| %>
-              <%= f.input :name, label: "Your name:" %>
-              <%= f.input :comment, label: "Enter comment:" %>
-              <%= f.input :rating, collection: (1..5).to_a,label: "Your rating:" %>
-              <%= f.submit "Submit review" %>
-            <% end %>
-          </div>
-        </div>
-      </div>
+    <div>
+      <%= render 'show_reviews' %>
+    </div>
 
     <%# booking part %>
     <div class="col-4">
-      <div class="experience-card-booking">
-        <h5>Choose a date!</h5>
-          <%= simple_form_for [@user, @experience, @booking] do |f| %>
-          <div class="form-group">
-            <%= f.input :date, as: :string, placeholder: 'May 7, 2021', required: false, input_html: {class: "datepicker"}, label: false %>
-          </div>
-          <div class="flex mt-3">
-            <%= f.submit class: 'btn btn-flat' %>
-          </div>
-        <% end %>
-                                
+      <%= render 'booking' %>
+    </div>
+    
     <div class="col">
       <div>
         <%# Map %>

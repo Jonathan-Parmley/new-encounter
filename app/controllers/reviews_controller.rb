@@ -10,7 +10,6 @@ class ReviewsController < ApplicationController
 
     def new
       @review = Review.new 
-      raise
       # authorize @review
     end
 
@@ -20,6 +19,7 @@ class ReviewsController < ApplicationController
     end
 
     def create
+      @experience = Experience.find(params[:experience_id])
       @review = Review.new(review_params)
       @review.experience = @experience
       # @review.user = current_user
