@@ -23,7 +23,7 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
         new mapboxgl.Marker({color: '#F55A5F'})
         .setLngLat([ marker.lng, marker.lat ])
-        .addTo(map);    
+        .addTo(map);
 
         zoomMapToMarker(map, marker);
     } else if (mapElement.dataset.markers != null) {
@@ -43,14 +43,14 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
         fitMapToMarkers(map, markerIndex);
 
         // Searching on map
-        map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-            mapboxgl: mapboxgl }));
+        // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+        //     mapboxgl: mapboxgl }));
     }
   }
 
   const initMapbox = () => {
     const mapElement = document.getElementById('map');
-    
+
     if (mapElement) { // only build a map if there's a div#map to inject into
         mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
         const map = new mapboxgl.Map({

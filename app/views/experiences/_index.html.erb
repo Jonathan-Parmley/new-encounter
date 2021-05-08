@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-left mb-2">
-  <h4 class="tag-grey"><%= @experiences.count %> experiences</h4>
+  <h5 class="tag-grey"><%= @experiences.count %> experiences</h5>
 </div>
 
 <!-- Map -->
@@ -18,7 +18,7 @@
     <!-- Search -->
     <div class="card-experience-search m-4">
       <div class="m-4">
-        <h3 class="mb-4">Find the right experience for you</h3>
+        <h4 class="mb-4">Find the right experience for you</h4>
         <%= form_tag root_path, method: :get do %>
           <%= text_field_tag :query,
             params[:query],
