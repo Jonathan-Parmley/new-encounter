@@ -35,20 +35,10 @@
 
     </div>
 
-    <%# review part %>
-    <div>
-      <%= render 'show_reviews' %>
-    </div>
-
-    <%# booking part %>
-    <div class="col-4">
-      <%= render 'booking' %>
-    </div>
-    
     <div class="col">
       <div>
         <%# Map %>
-        <div id="map", class="card-show-map"
+        <div id="map", class="card-show-map mt-1"
         style="width: 300; height: 400px;"
         data-marker="<%= @marker.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
@@ -56,6 +46,7 @@
       </div>
     </div>
   </div>
+
 
   <div class="row">
     <%# page left side %>
@@ -65,40 +56,16 @@
         <p><%= @experience.description %></p>
       </div>
 
-      <%# booking %>
-      <div class="col-4">
-        <div class="card-booking mt-4">
-          <div>
-            <h5><i class="fas fa-euro-sign fa-lg mr-1"></i><%= @experience.price %> / person </h5>
-          </div>
-          <div class="mt-3">
-            <i class="far fa-clock fa-lg mr-1"></i><span><%= @experience.duration %>h </span>
-          </div>
-          <h5 class="mt-3">Choose a date!</h5>
-            <%= simple_form_for [@user, @experience, @booking] do |f| %>
-            <div class="form-group">
-              <%= f.input :date, as: :string, placeholder: 'May 7, 2021', required: false, input_html: {class: "datepicker"}, label: false %>
-            </div>
-            <p>Starts 20:00 </p>
-            <div class="flex mt-3">
-              <%= f.submit class: 'btn btn-flat' %>
-            </div>
-          <% end %>
+  </div>
 
-          <%# host edit / delete %>
-          <% if policy(@experience).edit? %>
-            <div class='border-top mt-4'>
-              <p class="mt-2">Host:</p>
-              <%= link_to experience_path(@experience), method: :delete, data: { confirm: "Are you sure you want to remove #{@experience.title}"}, class: 'text-danger' do %>
-                <i class="far fa-trash-alt ml-4 mr-4"></i>
-              <% end %>
-              <%= link_to edit_experience_path(@experience) do %>
-                <i class="far fa-edit"></i>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
+      <%# booking part %>
+      <div class="col-4">
+        <%= render 'booking' %>
       </div>
   </div>
 
+  <%# review part %>
+      <div>
+        <%= render 'show_reviews' %>
+      </div>
 </div>
