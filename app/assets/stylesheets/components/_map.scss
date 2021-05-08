@@ -19,15 +19,21 @@
 
 .mapboxgl-popup {
     max-width: 200px;
-    border-radius: 50px !important;
+    border-radius: 34px !important;
 }
   
 .mapboxgl-popup-content {
     text-align: center;
     font-family: $body-font;
     font-weight: lighter;
-   
+    width: 180px;
+    border-radius: 34px !important;
 }
+
+.mapboxgl-popup-content-wrapper {
+    padding: 1%;
+}
+
 
 .mapboxgl-marker {
     background-image: url('mapbox-icon.png');
@@ -38,16 +44,10 @@
     cursor: pointer;
 }
 
-
-.map_content h4 p {
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
+.mapboxgl-popup-close-button {
+    display: none;
 }
 
 .popup_img {
-    max-width: 200px;
-    height: 100px;
+    margin-bottom: 4px;
 }
-

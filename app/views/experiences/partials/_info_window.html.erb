@@ -1,5 +1,5 @@
 <div class="map_content">
- <div class="popup_img"><%= cl_image_tag experience.photos.first.key, height: 100, width: 200, crop: :fill %></div>
+ <div class="popup_img"><%= cl_image_tag experience.photos.first.key, height: 100, width: 160, :fetch_format=>:auto, :radius=>34, crop: :fill %></div>
 <h4><%= experience.title %></h4>
 <p><%= experience.location %></p>
 </div>
