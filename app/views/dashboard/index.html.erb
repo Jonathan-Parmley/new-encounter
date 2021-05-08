@@ -1,0 +1,20 @@
+<div class="banner-dash mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/Bkci_8qcdvQ);">
+  <div class="container">
+    <div>
+      <h1>My encounters</h1>
+      <p>Your account, in one place</p>
+    </div>
+  </div>
+</div>
+
+<div class='container'>
+
+  <div class="d-flex flex-row">
+    <i class="far fa-user pr-3"></i>
+    <p class="text-dark"> Weclome <%= current_user.email %> </p>
+  </div>
+
+<%= render 'user_bookings' %>
+<%= render 'user_experiences' %>
+
+</div>

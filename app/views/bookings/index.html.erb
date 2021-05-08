@@ -1,48 +1,48 @@
-<h4>You currently have <%= @bookings.count %> bookings</h4>
-<h4>You've created <%= @experiences.count %> experiences</h4>
+<div class='container'>
+  <h4>Bookings ( <%= @bookings.count %> )</h4>
+</div>
 
-    <div class='container'>
-    <%# tabs %>
-      <div class="tabs">
-          <div class="tabs-items active">
-            <h3><%= @bookings.count %></h3>
-            <p><%= link_to "Your Bookings", bookings_path %></p>
-          </div>
-          <div class="tabs-items">
-            <h3><%= @experiences.count %></h3>
-            <p>Your Offerings<%#= link_to "Your Offerings", experiences_path %></p>
-          </div>  
-      </div>
 
-    <%# lists %>
-        <ul class="list-unstyled">
-            <% @bookings.each do |booking| %>
-                <li class="product">
-                <div class="product-upvote text-center">
-                    <i class="fa fa-caret-up"></i>
-                    <p><%= booking.id %></p>
-                </div>
-                <% if booking.experience.photos.attached? %>
-                    <% booking.experience.photos.each do |photo| %>
-                        <%= cl_image_tag photo.key, height: 120, width: 200, crop: :fill %>
-                    <% end %>
-                <% else %>
-                    <%= cl_image_tag("vhdtrwmulsvwsvrhkatw", width: 120, height: 200, crop: :fill) %>
-                <% end %>                
-                <div class="product-description">
-                    <h3><%= booking.experience.title %></h3>
-                    <p><%= booking.date %></p>
-                    <p>Pending... <small><em class="text-muted">booked <%= distance_of_time_in_words_to_now(booking.created_at) %> ago</em></small>
-</p>
-                </div>
-                  <ul class="list-inline product-controls">
-                    <li><a href=""><i class="far fa-trash-alt"></i></a></li>
-                    <li><a href=""><i class="far fa-edit"></i></a></li>
-                  </ul>  
-                </li>
-            <% end %>
-        </ul>
+<%# tabs %>
+<!--   <div class="tabs">
+    <div class="tabs-items active">
+      <h3><%= @bookings.count %></h3>
+      <p><%= link_to "Your Bookings", bookings_path %></p>
     </div>
-      
+    <div class="tabs-items">
+      <h3><%= @experiences.count %></h3>
+      <p>Your Offerings<%#= link_to "Your Offerings", ??_path %></p>
+    </div>
+  </div> -->
+
+<%# lists %>
+<!--     <ul class="list-unstyled">
+        <% @bookings.each do |booking| %>
+            <li class="product">
+            <div class="product-upvote text-center">
+                <i class="fa fa-caret-up"></i>
+                <p><%= booking.id %></p>
+            </div>
+            <% if booking.experience.photos.attached? %>
+                <% booking.experience.photos.each do |photo| %>
+                    <%= cl_image_tag photo.key, height: 120, width: 200, crop: :fill %>
+                <% end %>
+            <% else %>
+                <%= cl_image_tag("vhdtrwmulsvwsvrhkatw", width: 120, height: 200, crop: :fill) %>
+            <% end %>
+            <div class="product-description">
+                <h3><%= booking.experience.title %></h3>
+                <p><%= booking.date %></p>
+                <p>Pending... <small><em class="text-muted">booked <%= distance_of_time_in_words_to_now(booking.created_at) %> ago</em></small></p>
+            </div>
+              <ul class="list-inline product-controls">
+                <li><a href=""><i class="far fa-trash-alt"></i></a></li>
+                <li><a href=""><i class="far fa-edit"></i></a></li>
+              </ul>
+            </li>
+        <% end %>
+    </ul> -->
+
+
 
 
