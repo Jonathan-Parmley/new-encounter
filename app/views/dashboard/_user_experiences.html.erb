@@ -5,29 +5,32 @@
     <div class="d-flex flex-column justify-content-end mt-3">
       <% @experiences.each do |experience| %>
 
-        <div class="card-dash mb-3 d-flex">
-          <div class="card-dash-image">
-            <%= cl_image_tag experience.photos.first.key, height: 100, width: 200, crop: :fill, gravity: :face %>
-          </div>
+        <div class="card-dash mb-3 d-flex justify-content-between">
+
           <div class="d-flex">
-
-            <div class="card-dash-info d-flex flex-column p-3">
-              <div>
-                <h6> <%= experience.title %> </h6>
+            <div class="card-dash-image">
+              <%= cl_image_tag experience.photos.first.key, height: 100, width: 200, crop: :fill, gravity: :face %>
+            </div>
+            <div class="d-flex flex-column p-3">
+              <div class="d-flex flex-row">
+                <h6 class="mr-4"> <%= experience.title %> </h6>
               </div>
-              <div>
-                <p><i class="fas fa-euro-sign fa-lg mr-1"></i><%= experience.price %> / person </p>
+              <div class="d-flex flex-row">
+                <p class="mr-4">20:00 <%= experience.duration %> hours</p>
+                <p class="mr-3"><i class="fas fa-euro-sign fa-lg mr-1"></i><%= experience.price %> / person </p>
+                <p class="mr-3">Reviews: <%= (rand(1..473)) %> (<%=  (rand(1..5))%>/5)</p>
+                <p class="mr-3">Open requests: <%= (rand(1..4)) %></p>
               </div>
             </div>
+          </div>
 
-            <div class="card-dash-edit d-flex justify-content-center align-items-center">
-              <%= link_to experience_path(experience) do %>
-                <h5><i class="far fa-edit text-dark"></i></h5>
-              <% end %>
-            </div>
-
+          <div class="card-dash-edit d-flex justify-content-center align-items-center">
+            <%= link_to experience_path(experience) do %>
+              <h5><i class="far fa-edit text-dark"></i></h5>
+            <% end %>
           </div>
         </div>
+
       <% end %>
     </div>
 </div>

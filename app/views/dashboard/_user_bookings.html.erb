@@ -16,17 +16,17 @@
               </div >
 
               <div class="d-flex flex-column p-3">
-                <div>
-                  <h6> <%= booking.experience.title %> </h6>
+                <div class="d-flex flex-row">
+                  <h6 class="mr-4"> <%= booking.experience.title %> </h6>
+                  <p><i class="fas fa-euro-sign fa-lg mr-1"></i><%= booking.experience.price %> / person </p>
+                </div>
+                <div class="d-flex flex-row">
+                  <p class="mr-4"> <%= booking.date.to_formatted_s(:short) %> 2021 </p>
+                  <p class="mr-4">20:00 <%= booking.experience.duration %> hours</p>
+                  <p class="text-warning mr-4">Pending... <small><em class="text-muted">booked <%= distance_of_time_in_words_to_now(booking.created_at) %> ago</em></small></p>
                 </div>
                 <div>
-                  <p> <%= booking.date %> </p>
-                  <p class="text-warning">Pending... <small><em class="text-muted">booked <%= distance_of_time_in_words_to_now(booking.created_at) %> ago</em></small></p>
                 </div>
-              </div>
-              <div>
-                <p><i class="fas fa-euro-sign fa-lg mr-1"></i><%= booking.experience.price %> / person </p>
-                <p>20:00 <%= booking.experience.duration %> hours</p>
               </div>
             </div>
             <div class="card-dash-edit d-flex justify-content-center align-items-center">
