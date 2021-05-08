@@ -8,9 +8,11 @@
         <div class="card-dash mb-3 d-flex justify-content-between">
 
           <div class="d-flex">
-            <div class="card-dash-image">
-              <%= cl_image_tag experience.photos.first.key, height: 100, width: 200, crop: :fill, gravity: :face %>
-            </div>
+            <%= link_to experience_path(experience), class:'text-decoration-none' do %>
+              <div class="card-dash-image">
+                <%= cl_image_tag experience.photos.first.key, height: 100, width: 200, crop: :fill, gravity: :face %>
+              </div>
+            <% end %>
             <div class="d-flex flex-column p-3">
               <div class="d-flex flex-row">
                 <h6 class="mr-4"> <%= experience.title %> </h6>
