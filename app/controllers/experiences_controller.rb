@@ -8,7 +8,12 @@ class ExperiencesController < ApplicationController
 
     def show
         @booking = Booking.new(experience: @experience)
-        
+        @review = Review.new(experience: @experience)
+        # for geocode
+        @marker = {
+            lat: @experience.latitude,
+            lng: @experience.longitude
+        }
     end
 
     def new

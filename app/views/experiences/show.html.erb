@@ -35,9 +35,23 @@
 
     </div>
 
+    <%# review part %>
+    <div>
+      <%= render 'show_reviews' %>
+    </div>
+
+    <%# booking part %>
+    <div class="col-4">
+      <%= render 'booking' %>
+    </div>
+    
     <div class="col">
       <div>
-        <h2>Insert map here</h2>
+        <%# Map %>
+        <div id="map", class="card-show-map"
+        style="width: 300; height: 400px;"
+        data-marker="<%= @marker.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         <%# <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%= @experience.location&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:red%7C<%= @experience.location&key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div> %>
       </div>
     </div>
@@ -50,29 +64,6 @@
         <h4>What you'll encounter...</h4>
         <p><%= @experience.description %></p>
       </div>
-
-      <%# review part %>
-      <hr class='my-5'>
-        <h3>Reviews</h3>
-        <%# if @experience.reviews.empty? %>
-          <small><em class="text-muted">Be the first one to review this list</em></small>
-        <%# end %>
-        <%# @experience.reviews.each do |review| %>
-          <div>
-            <%# review.rating.times do %>
-              <i class="fas fa-star star-yellow"></i>
-            <%# end %>
-            <small><em class="text-muted"><%#= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
-            <p class="mb-0"><%#= review.comment %></p>
-          </div>
-          <hr>
-        <%# end %>
-        <%#= simple_form_for [@experience, @review] do |f| %>
-          <%#= f.input :comment, placeholder: 'Add your review here...' %>
-          <%#= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
-          <%#= f.submit class:'btn btn-flat' %>
-        <%# end %>
-    </div>
 
       <%# booking %>
       <div class="col-4">

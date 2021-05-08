@@ -14,5 +14,15 @@ class PagesController < ApplicationController
       # authorize @experiences
       @experiences = policy_scope(Experience).order(created_at: :desc)
     end
+
+    @markers = @experiences.geocoded.map do |experience|
+      {
+        lat: experience.latitude,
+        lng: experience.longitude,
+        infoWindow: render_to_string(partial: "experiences/partials/info_window", locals: { experience: experience }),
+        # image_url: experience.cl_image_path(experience.photos.first.key)
+        # image_url: experience.cl_image_path(experience.photo)
+      }
+  end
   end
 end
