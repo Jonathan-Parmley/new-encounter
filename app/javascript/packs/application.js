@@ -42,5 +42,5 @@ document.addEventListener('turbolinks:load', () => {
   previewImageOnFileSelect();
   initStarRating();
   initMapbox();
-  initAutocomplete();
+  // initAutocomplete();
 });

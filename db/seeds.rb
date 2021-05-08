@@ -606,12 +606,29 @@ e17 = [
       "https://source.unsplash.com/L9tlXv983dQ"
       ]
 
-experiences = []
+experiencesUser1 << e0 << e1 << e2 << e3 << e4 << e5 << e6 << e7 << e8 << e9 << e10 << e11 << e12 << e13 << e14
+experiencesUser2 << e15 << e16 << e17
 
-experiences << e0 << e1 << e2 << e3 << e4 << e5 << e6 << e7 << e8 << e9 << e10
-experiences << e11 << e12 << e13 << e14 << e15 << e16 << e17
+experiencesUser1.each do |e|
+  file1 = URI.open(e[2])
+  file2 = URI.open(e[3])
+  file3 = URI.open(e[4])
+  exp = Experience.new(
+        title: e[0],
+        description: e[1],
+        location: locations.sample,
+        duration: (rand(1..8)),
+        price: (rand(32..121)),
+        user_id: firstUser.id
+    )
+  exp.photos.attach(io: file1, filename: "#{(rand(1000000..1999999))}.png", content_type: 'image/png')
+  exp.photos.attach(io: file2, filename: "#{(rand(1000000..1999999))}.png", content_type: 'image/png')
+  exp.photos.attach(io: file3, filename: "#{(rand(1000000..1999999))}.png", content_type: 'image/png')
+  exp.save
+  puts "Creating experience: #{e[0]} "
+end
 
-experiences.each do |e|
+experiencesUser2.each do |e|
   file1 = URI.open(e[2])
   file2 = URI.open(e[3])
   file3 = URI.open(e[4])
