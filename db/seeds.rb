@@ -606,6 +606,9 @@ e17 = [
       "https://source.unsplash.com/L9tlXv983dQ"
       ]
 
+experiencesUser1 = []
+experiencesUser2 = []
+
 experiencesUser1 << e0 << e1 << e2 << e3 << e4 << e5 << e6 << e7 << e8 << e9 << e10 << e11 << e12 << e13 << e14
 experiencesUser2 << e15 << e16 << e17
 
@@ -638,7 +641,7 @@ experiencesUser2.each do |e|
         location: locations.sample,
         duration: (rand(1..8)),
         price: (rand(32..121)),
-        user_id: firstUser.id
+        user_id: secondUser.id
     )
   exp.photos.attach(io: file1, filename: "#{(rand(1000000..1999999))}.png", content_type: 'image/png')
   exp.photos.attach(io: file2, filename: "#{(rand(1000000..1999999))}.png", content_type: 'image/png')
