@@ -39,4 +39,4 @@ class ReviewsPolicy < ApplicationPolicy
 #   def review
 #     record
 #   end
-# end
+end
