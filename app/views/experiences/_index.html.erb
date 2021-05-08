@@ -1,56 +1,60 @@
-<div class="border-top mb-4">
-<div class="mt-2">
-  <%= form_tag root_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a experience"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary mt-2" %>
-  <% end %>
-</div>
+<div class="d-flex justify-content-left mb-2">
+  <h4 class="tag-grey"><%= @experiences.count %> experiences</h4>
 </div>
 
+<!-- Map -->
 <div>
   <div class="mb-4 mt-4">
     <div id="map", class="card-home-map"
-        style="width: 100%; height: 400px; "
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      style="width: 100%; height: 400px; "
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+</div>
 
-  <div class="border-top mb-4">
-    <% @experiences.each_slice(3) do |experiences| %>
-      <div class="row">
-        <% experiences.each do |experience| %>
-
-          <%= link_to experience_path(experience), class:'text-decoration-none' do %>
-            <div class="col-md-4">
-              <div class="m-4">
-                <div class="card-experience">
-                  <% if experience.photos.attached? %>
-                    <%= cl_image_tag experience.photos.first.key, height: 400, width: 300, crop: :fill %>
-                  <% end %>
-                  <div class="top-left">
-                    <span class="badge badge-light p-2">ONLINE</span>
-                  </div>
-                </div>
-                <div class="card-experience-infos mt-2 p-3 d-flex flex-column card-link">
-                  <div class="card-info">
-                    <p><%= experience.location %></p>
-                    <h2 class="mt-1"><%= experience.title %></h2>
-                  </div>
-                  <div class="pt-1 pr-2 d-flex flex-row-reverse">
-                    <p>From € <%= experience.price %> / person</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        
+<!-- Experience Cards -->
+<div class="d-flex justify-content-center ml-4">
+  <div class="d-flex flex-wrap ml-2">
+    <!-- Search -->
+    <div class="card-experience-search m-4">
+      <div class="m-4">
+        <h3 class="mb-4">Find the right experience for you</h3>
+        <%= form_tag root_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "eg. yoga..."
+          %>
+          <%= submit_tag "Search", class: "btn btn-primary mt-3" %>
         <% end %>
       </div>
+    </div>
+    <% experiences.each do |experience| %>
+      <%= link_to experience_path(experience), class:'text-decoration-none' do %>
+
+          <div class="m-4">
+            <div class="card-experience">
+              <% if experience.photos.attached? %>
+                <%= cl_image_tag experience.photos.first.key, height: 400, width: 300, crop: :fill %>
+              <% end %>
+              <div class="top-left">
+                <span class="badge badge-light p-2">ONLINE</span>
+              </div>
+            </div>
+            <div class="card-experience-infos mt-2 p-3 d-flex flex-column card-link">
+              <div class="card-info">
+                <p><%= experience.location %></p>
+                <h2 class="mt-1"><%= experience.title %></h2>
+              </div>
+              <div class="pt-1 pr-2 d-flex flex-row-reverse">
+                <p>From € <%= experience.price %> / person</p>
+              </div>
+            </div>
+          </div>
+
+      <% end %>
     <% end %>
+
   </div>
 </div>
 
