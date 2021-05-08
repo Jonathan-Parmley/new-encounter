@@ -1,6 +1,6 @@
 const previewImageOnFileSelect = () => {
     // we select the photo input
-    const input = document.getElementById('photo-input');
+    const input = document.getElementById('photos-input');
     if (input) {
       // we add a listener to know when a new picture is uploaded
       input.addEventListener('change', () => {
@@ -11,14 +11,24 @@ const previewImageOnFileSelect = () => {
   }
   
   const displayPreview = (input) => {
-    if (input.files && input.files[0]) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        document.getElementById('photo-preview').src = event.currentTarget.result;
-      }
-      reader.readAsDataURL(input.files[0])
-      document.getElementById('photo-preview').classList.remove('hidden');
-    }
+    if (input.files) {
+        const filesAmount = input.files.length;
+        console.log('input.files:', input.files);
+        for(var i = 0; i < filesAmount; i++) {
+          const reader = new FileReader();
+
+          reader.onload = (event) => {
+            var img = document.createElement('img');
+            img.height = 300;
+            img.width = 400;
+            img.marginBottom = 3;
+            img.src = event.currentTarget.result;
+            document.getElementById('photos').appendChild(img);
+          }
+          reader.readAsDataURL(input.files[i]);
+          document.getElementById('photos-preview').classList.remove('hidden');
+        }
+    };
   }
   
   export { previewImageOnFileSelect };
