@@ -6,13 +6,13 @@
     height: 400px;
     padding: 4px;
   }
-  
+
 .card-home-map {
     overflow: hidden;
     background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     height: 400px;
-    width: 900px;
+    width: 200px;
     border-radius: 34px;
     position: relative;
 }
@@ -21,7 +21,7 @@
     max-width: 200px;
     border-radius: 34px !important;
 }
-  
+
 .mapboxgl-popup-content {
     text-align: center;
     font-family: $body-font;

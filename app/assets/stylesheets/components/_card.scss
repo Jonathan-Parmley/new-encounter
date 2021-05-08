@@ -73,6 +73,16 @@
   position: relative;
 }
 
+.card-experience-search {
+  overflow: hidden;
+  background: lightgray;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  height: 518px;
+  width: 300px;
+  border-radius: 30px;
+  position: relative;
+}
+
 .card-experience-infos {
   overflow: hidden;
   background: white;
