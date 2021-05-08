@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     # end
 
     # def new
-    #   @review = Review.new 
+    #   @review = Review.new
     #   # authorize @review
     # end
 
@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
       # @experience.user = current_user
 
       if @review.save!
-          redirect_to experience_path(@experience), notice: 'Review was successfully created'
+          redirect_to experience_path(@experience, anchor: "review"), notice: 'Review was successfully created'
       else
         # flash[:alert] = "Something went wrong."
         redirect_to experience_path(@experience)
@@ -52,7 +52,7 @@ class ReviewsController < ApplicationController
       @review = Review.find(params[:id])
       # authorize @review
     end
-    
+
     def set_experience
       @experience = Experience.find(params[:experience_id])
     end

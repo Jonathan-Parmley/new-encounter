@@ -10,10 +10,10 @@
               <%= f.input :comment, label: "Enter comment:" %>
               <%= f.input :rating, collection: (1..5).to_a, label: "Your rating:" %>
               <%= f.submit "Submit review" , class: 'btn btn-flat' %>
-            </div>  
+            </div>
           <% end %>
       </div>
-        <div class="mt-4">
+        <div id="review" class="mt-4">
           <% if @experience.reviews.blank? %>
           Be the first to leave a review for <%= @experience.title %>
         <% else %>
@@ -27,9 +27,9 @@
           <% end %>
         <% end %>
         </div>
-        
-        </div> 
-        
-      
+
+        </div>
+
+
     </div>
   </div>
